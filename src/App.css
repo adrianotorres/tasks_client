@@ -4,3 +4,30 @@
 .navbar .navbar-brand {
   color: #f5dd16 !important;
 }
+.tasks_list {
+  margin-top: 40px;
+}
+.tasks_list .title {
+  font-size: 22px;
+  color: #7c7c7c;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.tasks_list .card {
+  background-color: #7c7c7c;
+}
+.tasks_list .card table {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.tasks_list .card table tbody > tr:nth-child(1) > td {
+  border-top: 0;
+}
+.tasks_list .card table .check {
+  color: #f5dd16;
+  font-size: 15px;
+}
+.tasks_list .card table .delete {
+  color: white;
+}
