@@ -11,6 +11,23 @@ class List extends Component {
     }
   }
 
+  async checkTask(task) {
+    await fetch(`http://localhost:3001/tasks/${task.id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          task: { done: true }
+        })
+      }
+    )
+
+    this.props.loadTasks();
+  }
+
   render() {
     return (
       <div>
@@ -23,11 +40,11 @@ class List extends Component {
                     <td className="col-md-10">{task.title}</td>
                     <td>
                       {
-                        task.done === false
-                        ? <button className="check">
-                            <FontAwesomeIcon icon="check-circle"/>
+                        task.done
+                        ? null
+                        : <button className="check" onClick={() => this.checkTask(task)}>
+                            <FontAwesomeIcon icon="check-circle" size="lg"/>
                           </button>
-                        : null
                       }
                     </td>
                     <td>
