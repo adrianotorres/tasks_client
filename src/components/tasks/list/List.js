@@ -4,6 +4,13 @@ import Table from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class List extends Component {
+  async deleteTask(task) {
+    if (window.confirm(`Are you sure you want to delete: "${task.title}"`)) {
+      await fetch(`http://localhost:3001/tasks/${task.id}`, {method: 'DELETE'});
+      this.props.loadTasks();
+    }
+  }
+
   render() {
     return (
       <div>
@@ -24,7 +31,7 @@ class List extends Component {
                       }
                     </td>
                     <td>
-                      <button className="delete">
+                      <button className="delete" onClick={() => this.deleteTask(task)}>
                         <FontAwesomeIcon icon="trash-alt"/>
                       </button>
                     </td>
