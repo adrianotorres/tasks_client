@@ -19,6 +19,13 @@
   font-weight: 500;
   margin-top: 10px;
 }
+.tasks_list .remove_tasks_btn {
+  background-color: #ee4525;
+  border-color: #ee4525;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #fff;
+}
 .tasks_list .card {
   background-color: #7c7c7c;
 }
